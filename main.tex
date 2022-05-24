@@ -1,0 +1,443 @@
+%% start of file `template.tex'.
+%% Copyright 2006-2013 Xavier Danaux (xdanaux@gmail.com).
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License version 1.3c,
+% available at http://www.latex-project.org/lppl/.
+
+
+\documentclass[11pt,a4paper,roman,colorlinks,linkcolor=blue,filecolor=magenta,urlcolor=cyan]{moderncv}        % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
+
+% modern themes
+\moderncvstyle{banking}                            % style options are 'casual' (default), 'classic', 'oldstyle' and 'banking'
+\moderncvcolor{blue}                                % color options 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
+%\renewcommand{\familydefault}{\sfdefault}         % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
+\nopagenumbers{}                                  % uncomment to suppress automatic page numbering for CVs longer than one page
+
+% character encoding
+%\usepackage{hyperref}
+% \hypersetup{
+%     colorlinks=true,
+%     linkcolor=blue,
+%     filecolor=magenta,      
+%     urlcolor=cyan,
+%     pdftitle={Overleaf Example},
+%     pdfpagemode=FullScreen,
+%     }
+    
+\usepackage[utf8]{inputenc}
+\usepackage{fontawesome}
+\usepackage{tabularx}
+\usepackage{ragged2e}
+% if you are not using xelatex ou lualatex, replace by the encoding you are using
+%\usepackage{CJKutf8}                              % if you need to use CJK to typeset your resume in Chinese, Japanese or Korean
+
+% adjust the page margins
+\usepackage[scale=0.9]{geometry}
+\usepackage{multicol}
+% \usepackage{hyperref}
+
+% \definecolor{links}{HTML}{2A1B81}
+%\setlength{\hintscolumnwidth}{3cm}                % if you want to change the width of the column with the dates
+%\setlength{\makecvtitlenamewidth}{10cm}           % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
+
+\usepackage{import}
+
+% personal data
+\name{Erfan}{Miahi}
+% \title{Curriculum Vitae}                               % optional, remove / comment the line if not wanted
+\address{Edmonton, Canada}{}{}% optional, remove / comment the line if not wanted; the "postcode city" and and "country" arguments can be omitted or provided empty
+ %\phone[mobile]{(+88)0 1718268856}                   % optional, remove / comment the line if not wanted
+%\phone[fixed]{+18254360215}                    % optional, remove / comment the line if not wanted
+%\phone[fax]{+3~(456)~789~012}                      % optional, remove / comment the line if not wanted
+%\email{miahi@ualberta.ca}                               % optional, remove / comment the line if not wanted
+%\homepage{https://erfanmhi.github.io/}                         % optional, remove / comment the line if not wanted
+% \extrainfo{}                 % optional, remove / comment the line if not wanted
+%\photo[64pt][0.4pt]{picture}                       % optional, remove / comment the line if not wanted; '64pt' is the height the picture must be resized to, 0.4pt is the thickness of the frame around it (put it to 0pt for no frame) and 'picture' is the name of the picture file
+%\quote{Some quote}                                 % optional, remove / comment the line if not wanted
+
+% to show numerical labels in the bibliography (default is to show no labels); only useful if you make citations in your resume
+%\makeatletter
+%\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}
+%\makeatother
+%\renewcommand*{\bibliographyitemlabel}{[\arabic{enumiv}]}% CONSIDER REPLACING THE ABOVE BY THIS
+
+% bibliography with mutiple entries
+%\usepackage{multibib}
+%\newcites{book,misc}{{Books},{Others}}
+%   \newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+% \newcommand*{\papercventry}[7][.25em]{
+%   \begin{tabular}{ @{}L{0.65\linewidth}} 
+%     {\bfseries #4}
+%   \end{tabular}
+%   \hfill% move it to the right
+%   \begin{tabular}{r}
+%      {\bfseries #5}
+%   \end{tabular} \\
+%   \begin{tabular}{@{}l} 
+%     {\itshape #3}
+%   \end{tabular}
+%   \hfill% move it to the right
+%   \begin{tabular}{l@{}}
+%      {\itshape #2}
+%   \end{tabular}
+%   \ifx&#7&%
+%   \else{\\%
+%     \begin{minipage}{\maincolumnwidth}%
+%       \small#7%
+%     \end{minipage}}\fi%
+%   \par\addvspace{#1}}
+
+\newcommand*{\papercventry}[7][.25em]{
+  \begin{tabular}{@{}l} 
+    {\bfseries #4}
+  \end{tabular}
+  \hfill% move it to the right
+  \begin{tabular}{l@{}}
+     {\bfseries #5}
+  \end{tabular} \\
+  \begin{tabular}{@{}l} 
+    { #3}
+  \end{tabular}
+  \hfill% move it to the right
+  \begin{tabular}{l@{}}
+     { #2}
+  \end{tabular}
+  \ifx&#7&%
+  \else{\\%
+    \begin{minipage}{\maincolumnwidth}%
+      \small#7%
+    \end{minipage}}\fi%
+  \par\addvspace{#1}}
+
+\newcommand*{\customcventry}[7][.25em]{
+  \begin{tabular}{@{}l} 
+    {\bfseries #4}
+  \end{tabular}
+  \hfill% move it to the right
+  \begin{tabular}{l@{}}
+     {\bfseries #5}
+  \end{tabular} \\
+  \begin{tabular}{@{}l} 
+    {\itshape #3}
+  \end{tabular}
+  \hfill% move it to the right
+  \begin{tabular}{l@{}}
+     {\itshape #2}
+  \end{tabular}
+  \ifx&#7&%
+  \else{\\%
+    \begin{minipage}{\maincolumnwidth}%
+      \small#7%
+    \end{minipage}}\fi%
+  \par\addvspace{#1}}
+
+
+\newcommand*{\customcvproject}[4][.25em]{
+%   \vfill\noindent
+  \begin{tabular}{@{}l} 
+    {\bfseries #2}
+  \end{tabular}
+  \hfill% move it to the right
+  \begin{tabular}{l@{}}
+     { #3}
+  \end{tabular}
+  \ifx&#4&%
+  \else{\\%
+    \begin{minipage}{\maincolumnwidth}%
+      \small#4%
+    \end{minipage}}\fi%
+  \par\addvspace{#1}}
+
+\setlength{\tabcolsep}{12pt}
+
+%----------------------------------------------------------------------------------
+%            content
+%----------------------------------------------------------------------------------
+\begin{document}
+%\begin{CJK*}{UTF8}{gbsn}                          % to typeset your resume in Chinese using CJK
+%-----       resume       ---------------------------------------------------------
+\makecvtitle
+\vspace*{-15mm}
+
+
+% \hypersetup{
+%     % colorlinks=true,
+%     linkcolor=blue,
+    % filecolor=magenta,      
+    % urlcolor=cyan,
+% }
+
+\begin{center}
+\begin{tabular}{ c c c c }
+ %\faGlobe\enspace sites.google.com  
+ \faEnvelopeO\enspace miahi@ualberta.ca & \faMobile\enspace (+1) 8254360215  & \faUser\enspace \href{https://erfanmhi.github.io/}{erfanmhi.github.io}\\  
+\end{tabular}
+\end{center}
+
+% \section{RESEARCH INTEREST}
+% Machine Learning, Data Mining.
+
+\section{EDUCATION}
+{\customcventry{Jan 2021 - present}{M.Sc. in Computing Science}{University of Alberta}{Edmonton, Canada}{}{}}
+\begin{itemize}
+    \item \textbf{Supervisors: \textit{Martha White \& Marlos C. Machado}}
+    \item \textbf{Courses:} Reinforcement Learning II (CMPUT 609), Empirical Reinforcement Learning (CMPUT 607), Real-Time Policy Learning (CMPUT 653), Representation Learning for Reinforcement Learning (CMPUT 605)
+    % \item \textbf{Expected Graduation Date:} Apr 2022
+\end{itemize}
+
+%CGPA: 3.95/4.00 \\
+\vspace{2mm}
+
+{\customcventry{Sep 2015 - Aug 2019}{B.Sc in Computer Engineering}{University of Guilan}{Rasht, Iran}{}{}}
+\begin{itemize}
+    \item \textbf{CGPA:} 19.43/20
+    \item \textbf{Ranked 1\textsuperscript{st} in class}
+    \item \textbf{Abrishamchian Reward} (Awarded for graduating with the highest distinction among all students of the University of Guilan)
+\end{itemize}
+\section{WORK EXPERIENCE}
+
+{\customcventry{Nov 2021 - present}{Amii}{Student Contractor}{Edmonton, Canada}{}{}
+}
+I have contributed to the Startup Team as part of the program called SCALE AI: Supply Chain West through assisting in \textbf{consulting startups for coming up with better ML solutions}.
+% \begin{itemize}
+%     \item Preparing presentations
+%     \item 
+% \end{itemize}
+
+\vspace{2mm}
+
+
+{\customcventry{Oct 2016 – Nov 2017}{Nila Software Group}{Front-end Developer}{Rasht, Iran}{}{}
+}
+I designed a website for introducing decorations and selling appliances using Angular framework.
+
+
+%{\customcventry{August 2011}{Bachelor of Technology in Applied Electronics and Instrumentation Engineering   }{West Bengal University of Technology}{Kolkata, West India}{}{}}
+
+% {\customcventry{Sep 2019 - Jan 2020}{Teaching Assistant, Principles of Data Mining}{University of Guilan}{Rasht, Iran}{}{}
+% }
+% {\customcventry{Sep 2018 - Jan 2019}{Teaching Assistant, Principles of Computational Intelligence}{University of Guilan}{Rasht, Iran}{}{}
+% }
+% {\customcventry{Jan 2018 - June 2018}{Teaching Assistant, Algorithm Design}{University of Guilan}{Rasht, Iran}{}{}
+% }
+% {\customcventry{Sep 2017 - Jan 2018}{Teaching Assistant, Data Structures}{University of Guilan}{Rasht, Iran}{}{}
+% }
+% {\customcventry{Jan 2017 - June 2017}{Teaching Assistant, Advanced Programming}{University of Guilan}{Rasht, Iran}{}{}
+% }
+% {\customcventry{Sep 2016 - Jan 2017}{Teaching Assistant, Principles of Computer \& Programming}{University of Guilan}{Rasht, Iran}{}{}
+% }
+
+
+
+
+
+\section{KEY SKILLS}
+\begin{tabular}{ @{} >{\bfseries}l @{\hspace{6ex}} l }
+Programming Language\ & Python, C++, Java, JavaScript, TypeScript \\
+ML Framework\ & PyTorch, TensorFlow  \\
+Cloud Services\ & Google Cloud, Compute Canada \\
+Web Development\ & Django, Flask, Angular, React, HTML, CSS  \\
+Operating Systems\ & Windows, GNU/Linux (Ubuntu \& Fedora), macOS \\
+Extra Tools\ & MySQL, Vim, Git \\
+Strong Background in\ & ML and Deep Learning, RL, Mathematics, Data Structures and Algorithms  \\
+\end{tabular}
+
+%\section{COMPETITIVE PROGRAMMING}
+%{\customcvproject{Problem Solving}{}
+%{\begin{itemize}
+  %\item UVA online judge (80+ problems)
+%\end{itemize}F
+%}
+%}
+
+\section{SELECTED PROJECTS (\href{https://github.com/erfanMhi}{\textit{Extra Projects on GitHub}})}
+{\customcvproject{Assignments of deep RL course by Sergey Levin}{ \href{https://github.com/erfanMhi/Deep-Reinforcement-Learning-CS285-Tensorflow}{TensorFlow}/\href{https://github.com/erfanMhi/Deep-Reinforcement-Learning-CS285-Pytorch}{PyTorch}}
+  {
+  \begin{itemize}
+    \item Solved its assignments that were originally designed in TensorFlow
+    \item Completely altered the code and implemented another version of them in PyTorch
+    \end{itemize}
+  }
+}
+
+\vspace{2mm}
+
+
+{\customcvproject{Proposing a new soft-greedy operator for exploration}{}
+  {
+  \begin{itemize}
+    \item Implemented a codebase for running a large set of deep RL experiments from scratch in PyTorch
+    \item Designed a set of experiments that clearly showed the advantages of this new operator for exploration
+    \item Ran a large set of experiments on simple OpenAI gym environments as well as 8 Atari Environments
+    \end{itemize}
+  }
+}
+
+\vspace{2mm}
+
+{\customcvproject{Investigating the efficacy of the representations learned in deep RL for generalization}{}
+  {
+  \begin{itemize}
+    \item Implemented several auxiliary losses, including \href{https://arxiv.org/abs/2009.08319}{ATC} and \href{https://openreview.net/pdf?id=HJlNpoA5YQ}{Laplacian loss}, for value-based deep RL algorithms
+    \item Proposed, designed, analyzed, and ran  more than $10,000$ CPU and $300$ GPU experiments on weekly basis
+    \end{itemize}
+  }
+}
+\newpage
+
+\section{PUBLICATIONS (\href{https://scholar.google.com/citations?user=7aP0Sp4AAAAJ&hl=en}{\textit{Google Scholar}})}
+{\papercventry{\href{https://arxiv.org/abs/2203.15955}{Paper}}{Han Wang, Erfan Miahi, Martha White, Marlos C. Machado, et al.}{Investigating the Properties of Neural Network Representations in Reinforcement Learning}{}{}{}}
+\textit{Under review in IEEE Transactions on Pattern Analysis and Machine Intelligence}
+
+\vspace{2mm}
+{\papercventry{\href{https://www.sciencedirect.com/science/article/abs/pii/S0957417421012914}{Paper}}{Miahi, Erfan, Seyed Abolghasem Mirroshandel, and Alexis Nasr}{Genetic Neural Architecture Search for automatic assessment of human sperm images}{}{}{}}
+\textit{Published in Expert Systems and Applications}
+
+
+
+\vspace{2mm}
+\papercventry{\href{https://www.sciencedirect.com/science/article/abs/pii/S0010482520304522}{Paper}/\href{https://github.com/amirabbasii/Effect-of-Deep-Transfer-and-Multi-task-Learning-on-Sperm-Abnormality-Detection}{Code}}{Amir Abbasi*, Erfan Miahi*, Seyed Abolghasem Mirroshandel}{Effect of deep transfer and multi-task learning on sperm abnormality detection}{}{}{}
+\textit{Published in Computers in Biology and Medicine Journal}
+
+\vspace{2mm}
+\papercventry{\href{https://ieeexplore.ieee.org/document/9761797}{Paper}/\href{https://github.com/erfanMhi/Transfer-Optimization}{Code}}{Mojtaba Shakeri, Erfan Miahi, Abhishek Gupta, Yew-Soon Ong}{Scalable Transfer Evolutionary Optimization: Coping with Big Task Instances}{}{}{}
+\textit{Published in IEEE Transactions on Cybernetics Journal}
+% \section{RESEARCH EXPERIENCE}
+% \textbf{"Feature Selection and Classification on BDHS(Bangladesh Demographic and Health Survey, 2014) data analysis:a hybrid approach for predicting pregnancy termination."}
+% \vspace{1mm}
+% \begin{itemize}
+%     \item The main goal of this research is to downturn the rate of pregnancy termination.
+%     \item This research finds out the attributes that contribute to pregnancy termination and leads to propose a hybrid supervised machine learning approach.
+%     \item This Hybrid approach generates 67.2\% accuracy considering the biasedness of the dataset which is relatively better than other classifiers in terms of performance metrics.
+% \end{itemize}
+
+
+% {\customcvproject{Computational Intelligence Tutorial}{ \href{https://github.com/Computational-Intelligence-Fall18/Computational-Intelligence-Tutorials}{Tutorial}}
+%   {
+%   \begin{itemize}
+%     \item Designed a tutorial to help beginners understand and implement various metaheuristic algorithms in Python
+%     \item Included a lot of insightful visualizations for understanding the exploration-exploitation dilemma
+%     \end{itemize}
+%   }
+% }
+
+
+% \section{PROFESSIONAL RECOGNITION}
+% \begin{itemize}
+%     \item CCNA Routing \& Switching (Version 5.03) of CISCO (4 semester long course).
+% \end{itemize}
+
+
+\section{LEADERSHIP EXPERIENCES \& VOLUNTARY ACTIVITIES}
+    		{\customcventry{Aug 2018 -- Sep 2019}{Brain and Cognition Association - University of Guilan}{Vice Chairman of the Modeling and Artificial Intelligence Committee}{Rasht, Iran}{}{}}
+    		\begin{itemize}
+    		    \item Gave lectures on the topics of artificial intelligence and neuroscience
+    		    \item Organized events and symposiums to increase the knowledge of the public about cognitive science
+    		    %such as Artificial Intelligence, Computational Neuroscience, Data Science, and Optimization algorithms.
+    		\end{itemize}
+    % 		\customcvproject{Vice Chairman of the Modeling and Artificial Intelligence Committee}{Aug 2018 -- Sep 2019}{
+		  %      \textbf{at Brain and Cognition Association - University of Guilan} \newline
+    %             I was educating students in the fields of Artificial Intelligence and Cognitive Science through lecturing, holding events, and mentorship. }
+		
+%{School of AI, Rasht Chapter}
+            \vspace{1mm}
+    		{\customcventry{Oct 2018 -- present}{Rasht School of AI}{Dean}{Rasht, Iran}{}{}}
+    		\begin{itemize}
+    		    \item Established an artificial intelligence learning community in the city of Rasht for the first time
+    		    \item Organized five seminars and lectured in four of them (\href{https://github.com/rasht-school-of-ai/Meetup-Materials}{Slides})
+    		    \item Designed a learning path for students who want to learn ML and Deep Learning
+    		    \item Have been mentoring several students who are motivated to pursue artificial intelligence and computational neuroscience (\href{https://erfanmhi.github.io/pages/mentorship.html}{My current mentee})
+    		    %such as Artificial Intelligence, Computational Neuroscience, Data Science, and Optimization algorithms.
+    		\end{itemize}
+
+        % 	\customcvproject{Dean at Rasht School of AI}{Oct 2018 -- present}{
+        %     I held five meetups in Rasht and lectured in four of them about topics such as Artificial Intelligence, Computational Neuroscience, Data Science, and Optimization algorithms. The materials of these meetups can be found \href{https://github.com/school-of-ai-rasht-chapter/Meetup-Materials}{here}. Furthermore, I designed a learning path for students who want to learn ML and Deep Learning. You can found it in \href{https://t.me/joinchat/GtdKmRJ2jXuzymyXm2RuQA}{this Telegram channel}. Moreover, I am currently mentoring several students who are motivated to pursue Natural Language Processing, Reinforcement Learning, and Computational Neuroscience  (\href{https://www.credential.net/88276493-a749-4108-bdd2-6ea5a702be2c}{certification}).}
+            \vspace{1mm}
+        	\customcventry{}{ICML 2021}{RL Social Organizer}{Remote}{}{}
+
+\section{TEACHING EXPERIENCE}
+{\customcventry{Jan 2021 - Apr 2021}{Teaching Assistant, Basics of Machine Learning}{University of Alberta}{Edmonton, Canada}{}{}
+\textbf{Instructor}: Martha White
+
+  \begin{itemize}
+    \item Prepared and presented two seminars on using python for ML and data visualization
+    % \item Completely altered the code and implemented another version of them in PyTorch
+    \item Graded and improved the assignments of more than $100$ students
+    \end{itemize}
+}
+
+\vspace{2mm}
+
+\textbf{Teaching Assistant Experiences at the University of Guilan:}
+Principles of Data Mining, Principles of Computational Intelligence (\href{https://github.com/Computational-Intelligence-Fall18/Computational-Intelligence-Tutorials}{A tutorial designed by me for the course}), Algorithm Design, Data Structures, Advanced Programming, Principles of Computer \& Programming
+
+
+\section{AWARDS AND ACHIEVEMENTS}
+\begin{minipage}{\maincolumnwidth}%
+	\small{
+    	\begin{itemize}
+    			\item \textbf{Ranked 6th in World Robot Challenge 2018 (received travel grant to Japan)}% \newline
+             %   My team and I participated in the international World Robot Challenge 2018 (WRC2018), and we ranked 6th in the Partner Robot challenge (Virtual Space) category which was held in Japon. 126 teams from 23 countries participated in this competition (\href{https://www.dropbox.com/s/bp9kqpk0mmomlhz/World\%20Robot\%20Summit\%20Certification.jpg?dl=0}{certification}).
+    			\item \textbf{Top Researcher in Computer Engineering Group}% \newline
+    			\item \textbf{Tuition Waiver, B.Sc, University of Guilan} %\newline
+      %          I was selected through a highly competitive national entrance exam. In this exam, the selected students should have a minimum rank of up to 1\% to get accepted at the University of Guilan, and it has approximately a total of 500,000 applicants.
+                \item \textbf{National Organization for Development of Exceptional Talents (NODET)} %\newline
+         %       Recognized as a talented student in the entrance exam of NODET among Qazvin students for middle and high school.
+                \item \textbf{Honorable Mention in ACM/ICPC 2016}% \newline
+         %     I have participated in the \textbf{ACM International Collegiate Programming Contest (ICPC)} which was held in the Sharif University of Technology in 2016 (\href{https://www.dropbox.com/s/t3nfzaavpyrf8os/ACM\%20certification.pdf?dl=0}{certification}).
+               \item \textbf{Ranked 1\textsuperscript{st} in international movement festival- special section}% \newline
+              % Brain and Cognition Association members and I received this award because of our accomplishments, such as holding various seminars and events in the field of cognitive science, neuroscience, psychology, and artificial intelligence.
+		\end{itemize}}%
+\end{minipage}%
+
+%\section{Certifications}
+%RL Specialization, Deep Learning Specialization, Machine Learning Course, Data Science Course, Data Visualization Course
+\section{LANGUAGES}
+\textbf{English} - Fluent \enspace \enspace \textbf{Persian} - Native
+
+    % 		\begin{cvsubsection}{Mentorship}{Self-Employed}{Oct 2018 -- Present}
+		  %      \textbf{Vice Chairman of the Modeling and Artificial Intelligence Committee} \newline
+    %             I was educating students in the fields of Artificial Intelligence and Cognitive Science through lecturing, holding events, and mentorship. 
+    % 		\end{cvsubsection}
+    
+% \section{REFERENCES}
+% \begin{itemize}
+%     \item \textbf{Dr.M.M.A Hashem}\\
+%     Professor, Department of Computer Science and Engineering\\
+%     Khulna University of Engineering \& Technology, Khulna-9203 , Bangladesh.\\
+%     mma.hashem@gmail.com, hashem@cse.kuet.ac.bd\\
+%     Cell:(+880) 1714003949
+    
+%     \vspace{2mm}
+%      \item \textbf{Dr.K.M Azharul Hasan}\\
+%     Professor, Department of Computer Science and Engineering\\
+%     Khulna University of Engineering \& Technology, Khulna-9203 , Bangladesh.\\
+%     azhasan@gmail.com, az@cse.kuet.ac.bd\\
+%     Cell:(+880) 1714087273
+    
+% \end{itemize}
+      
+
+% Publications from a BibTeX file without multibib
+%  for numerical labels: \renewcommand{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}% CONSIDER MERGING WITH PREAMBLE PART
+%  to redefine the heading string ("Publications"): \renewcommand{\refname}{Articles}
+\nocite{*}
+\bibliographystyle{plain}
+\bibliography{publications}                        % 'publications' is the name of a BibTeX file
+
+% Publications from a BibTeX file using the multibib package
+%\section{Publications}
+%\nocitebook{book1,book2}
+%\bibliographystylebook{plain}
+%\bibliographybook{publications}                   % 'publications' is the name of a BibTeX file
+%\nocitemisc{misc1,misc2,misc3}
+%\bibliographystylemisc{plain}
+%\bibliographymisc{publications}                   % 'publications' is the name of a BibTeX file
+
+%-----       letter       ---------------------------------------------------------
+
+\end{document}
+
+
+%% end of file `template.tex'.
