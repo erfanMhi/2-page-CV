@@ -1,0 +1,65 @@
+
+\newcommand*{\papercventry}[7][.25em]{
+  \begin{tabular}{@{}l} 
+    {\bfseries #4}
+  \end{tabular}
+  \hfill% move it to the right
+  \begin{tabular}{l@{}}
+     {\bfseries #5}
+  \end{tabular} \\
+  \begin{tabular}{@{}l} 
+    { #3}
+  \end{tabular}
+  \hfill% move it to the right
+  \begin{tabular}{l@{}}
+     { #2}
+  \end{tabular}
+  \ifx&#7&%
+  \else{\\%
+    \begin{minipage}{\maincolumnwidth}%
+      \small#7%
+    \end{minipage}}\fi%
+  \par\addvspace{#1}}
+
+\newcommand*{\customcventry}[7][.25em]{
+  \begin{tabular}{@{}l} 
+    {\bfseries #4}
+  \end{tabular}
+  \hfill% move it to the right
+  \begin{tabular}{l@{}}
+     {\bfseries #5}
+  \end{tabular} \\
+  \begin{tabular}{@{}l} 
+    {\itshape #3}
+  \end{tabular}
+  \hfill% move it to the right
+  \begin{tabular}{l@{}}
+     {\itshape #2}
+  \end{tabular}
+  \ifx&#7&%
+  \else{\\%
+    \begin{minipage}{\maincolumnwidth}%
+      \small#7%
+    \end{minipage}}\fi%
+  \par\addvspace{#1}}
+
+
+\newcommand*{\customcvproject}[4][.25em]{%
+  \begin{tabular}{@{}l} 
+    {\bfseries #2} % Project Title
+  \end{tabular}
+  \hfill
+  \begin{tabular}{l@{}}
+    {#3} % Project Details or Link
+  \end{tabular}%
+  \ifx&#4&% Check if #4 is empty
+    % Do nothing if #4 is not provided
+  \else
+    \\ % Newline for additional content
+    \begin{minipage}{\maincolumnwidth}%
+      \small#4 % Additional description
+    \end{minipage}%
+  \fi
+  \par\addvspace{#1}%
+}
+
