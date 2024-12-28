@@ -1,6 +1,6 @@
 <div align="center">
 
-# Elegant LaTeX Resume Template
+# Erfan's LaTeX Resume Template
 ### Professional CV template using `moderncv` banking style
 
 ![GitHub stars](https://img.shields.io/github/stars/yourusername/latex-resume?style=social)
