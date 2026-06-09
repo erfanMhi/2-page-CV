@@ -2,17 +2,25 @@
 
 {\customcventry
     {Toronto, Canada}
-    {Fronix (\href{https://fronix.net}{Website}) — formerly IntractAI}
-    {Technical Co-Founder}
-    {Aug 2023 – Present (1 yr 6 mo)}{}{}}
-    Co-founded startup pivoting from coding assistants to RL fine-tuning specialized reasoning models for enterprises.
+    {Qelix (\href{https://qelix.ca}{Website})}
+    {Technical Co-Founder (Currently Lead Research Engineer, CovenantAI)}
+    {Aug 2023 – Present (2 yrs)}{}{}}
+    Co-founded a startup focusing on post-training LLMs for specialized coding/math/gpu-kernel agents using RL and SFT.
     \begin{itemize}
-        \item \textbf{Led reasoning R\&D} on Graph-RAG and fine-tuning techniques, improving code pass@1 by 20 pp.
-        \item \textbf{Built scalable distributed stack} on 16×GPUs/2 nodes, cutting fine-tuning wall-time 2.1x.
-        \item \textbf{Post-trained 3–70 B LLMs} with GRPO \& PPO for reasoning; +12 pp accuracy on internal evals.
-        \item \textbf{Cut token latency 4x} via QLoRA quantization, vLLM, FlashAttention-2, fused KV-cache.
+        \item \textbf{Led R\&D} on \textbf{off-policy RLVR}, stabilizing \textbf{16-step policy staleness} and enabling \textbf{fully async inference–trainer updates}.
+       % \item \textbf{Proposed a lossless weight-delta protocol} reducing weight sync bandwidth by $\sim$100$\times$ in decentralized distributed RL.
+       \item Collaborated on \textbf{pre-training a 72B LLM}, the largest ever on decentralized infra (\href{https://huggingface.co/1Covenant/Covenant72B}{Model}, \href{https://arxiv.org/abs/2603.08163}{Report}, \href{https://x.com/tplr_ai/status/2031388295972929720}{$\sim$2M views}).
+        \item \textbf{Proposed a new inference verification algorithm}, shrinking verification payloads to 4 bytes per token ($2\times$ gain).
+        \item Pioneered RL weight-sync algorithm cutting bandwidth \textbf{$\sim$100$\times$}; cited by Fireworks for \textbf{Composer 2} RL infra.
+        %         \item \textbf{Led R\&D} on Hybrid-RAG and \textbf{(RL and Instruction) fine-tuning techniques}, improving code pass@1 by 20 pp.
+        % \item \textbf{Developed multimodal VLMs} to analyse specialized ML research documents, boosting retrieval F1 by 18 pp.
+        % \item \textbf{Built scalable distributed stack} on 16×GPUs/2 nodes, cutting fine-tuning wall-time 2.1x.
+        % \item \textbf{Post-trained 3–70 B LLMs} with GRPO \& PPO for reasoning; +12 pp accuracy on internal evals.
+        \item Built q-code \textbf{eval harness} from scratch and post-trained LLMs on it; +40 pp pass@1 accuracy (\href{https://medium.com/kx-systems/introducing-q-evaluation-harness-the-first-open-source-evaluation-framework-for-llms-on-q-kdb-01aa6099de4f}{Blog}).
+        %\item \textbf{Cut token latency 4x} via QLoRA quantization, vLLM, FlashAttention-2, fused KV-cache.
         % \item Built unit-test verifiers \& web agent, scraping 10 M code-commit pairs to fuel RLVR rewards.
-        \item Accepted to Antler \& NextAI ($<$$3$-$5\%$ admit); interviewed by Y Combinator ($<$$7\%$ admit).
+        \item Led development of a decentralized distributed post-training system, achieving $2\% \rightarrow \sim\!50\%$ gain on \textit{MATH} (\href{https://templarresearch.substack.com/p/grail-v0-how-we-built-a-fully-open}{Blog}).
+        \item Accepted to Antler \& NextAI ($<$$3$-$5\%$ admit); interviewed by \textbf{Y Combinator} ($<$$7\%$ admit).
     \end{itemize}
 
 
@@ -23,8 +31,8 @@
     {Nov 2022 – Oct 2024 (2 yrs)}{}{}}
     Founding ML research engineer conducted research and built large-scale auto-trading pipeline and research tooling.
     \begin{itemize}
-        \item \textbf{Built PyTorch pipeline that trained $>$1 M policy \& value nets}, adding \$35+ daily PnL/asset/share.
-        \item \textbf{Implemented SOTA papers \& devised RL algorithms} in 10+ research projects; added \$20+ daily PnL/asset/share.
+        \item \textbf{Built PyTorch pipeline that trained $>$1 M RL agents}, adding \$35+ daily PnL/asset/share.
+        \item \textbf{Implemented SOTA papers \& proposed RL algorithms} in 10+ research projects; added \$20+ daily PnL/asset/share.
         \item \textbf{Migrated training/backtest stack to AWS ECS \& Fargate}, enabling on-demand scaling across 100+ assets.
         \item \textbf{Optimized data pipeline, simulated environments, eval pipeline}, async I/O; cut epoch time 9x and EC2 cost 4x.
         \item Raised test coverage to 85\% with Pytest; slashed prod bugs 45\% across ECS, CI, and C++ engine.
@@ -35,7 +43,7 @@
 {\customcventry{Edmonton, Canada}{University of Alberta (RLAI Lab)}{Research Associate}{Sep 2022 - Dec 2022 (4 months)}{}{}
 }
 \begin{itemize}
-    \item \textbf{Redesigned ML codebase} for sensory data prediction, accelerating experimentation and analysis by \textbf{50\%} (\href{https://link.springer.com/article/10.1007/s10994-023-06413-x}{Publication}).
+    \item \textbf{Redesigned RL codebase} for sensory data prediction, accelerating experimentation and analysis by \textbf{50\%} (\href{https://link.springer.com/article/10.1007/s10994-023-06413-x}{Publication}).
     \item \textbf{Developed and deployed optimized offline RL and control algorithms}, improving system performance by \textbf{21\%}.
 \end{itemize}
 
@@ -111,7 +119,4 @@
 % \begin{itemize}
 %     \item CCNA Routing \& Switching (Version 5.03) of CISCO (4 semester long course).
 % \end{itemize}
-
-
-
 
